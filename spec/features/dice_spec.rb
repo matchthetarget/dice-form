@@ -152,7 +152,7 @@ describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
 end
 
 describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
-  it "displays the outcome of rolling two six-sided dice in strong HTML elements in an ordered list", points: 1 do
+  it "displays the outcome of rolling two six-sided dice in an ordered (numbered) list", points: 1 do
 
     random_dice = rand(100)
     random_sides = rand(100)
@@ -160,7 +160,7 @@ describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
     visit "/process_roll?dice=#{random_dice}&sides=#{random_sides}"
 
     expect(page).to have_tag("ol") do
-      with_tag("strong", :text => /\d+/, :count => random_dice)
+      with_tag("li", count: random_dice)
     end
   end
 end
