@@ -142,8 +142,8 @@ end
 describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
   it "has a level one heading with the text '[RANDOM_DICE]d[RANDOM_SIDES]'", points: 1 do
 
-    random_dice = rand(100)
-    random_sides = rand(100)
+    random_dice = rand(2..100)
+    random_sides = rand(2..100)
 
     visit "/process_roll?dice=#{random_dice}&sides=#{random_sides}"
 
@@ -154,8 +154,8 @@ end
 describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
   it "displays the outcome of rolling two six-sided dice in an ordered (numbered) list", points: 1 do
 
-    random_dice = rand(100)
-    random_sides = rand(100)
+    random_dice = rand(2..100)
+    random_sides = rand(2..100)
 
     visit "/process_roll?dice=#{random_dice}&sides=#{random_sides}"
 
