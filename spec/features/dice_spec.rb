@@ -147,7 +147,7 @@ describe "/process_roll?dice=[RANDOM_DICE]&sides=[RANDOM_SIDES]" do
 
     visit "/process_roll?dice=#{random_dice}&sides=#{random_sides}"
 
-    expect(page).to have_tag("h1", text: "#{random_dice}d#{random_sides}")
+    expect(page).to have_tag("h1", text: /\s*#{random_dice}d#{random_sides}\s*/)
   end
 end
 
